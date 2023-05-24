@@ -9,9 +9,14 @@ import img2 from '../../../assets/home/slide2.jpg'
 import img3 from '../../../assets/home/slide3.jpg'
 import img4 from '../../../assets/home/slide4.jpg'
 import img5 from '../../../assets/home/slide5.jpg'
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 const Category = () => {
     return (
-        <div className="mx-auto">
+        <section className="mx-auto">
+            <SectionTitle
+            subHeading={"from 11.00 am to 10.00 pm"}
+            heading={"Order Online"}
+            ></SectionTitle>
             <Swiper
 
                 slidesPerView={4}
@@ -45,7 +50,7 @@ const Category = () => {
                 </SwiperSlide>
 
             </Swiper>
-        </div>
+        </section>
 
 
     );
