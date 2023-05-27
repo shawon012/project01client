@@ -47,8 +47,8 @@ const Menu = () => {
             ></MenuCategory>
             {/* soup menu items */}
             <MenuCategory
-            items={pizza}
-            title="Pizza"
+            items={soup}
+            title="Soup"
             image={soupimage}
             ></MenuCategory>
         </div>
