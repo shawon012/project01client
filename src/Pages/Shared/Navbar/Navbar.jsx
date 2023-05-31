@@ -1,36 +1,43 @@
 import React, { useContext } from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then(() =>{
+            .then(() => {
 
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     const navOptions =
-     <>
-        <li> <Link to='/'>Home</Link> </li>
-        <li> <Link to='/menu'>Our Menu</Link> </li>
-        <li> <Link to='/order/Salad'>Order Now</Link> </li>
-        <li> <Link to='/secret'>Secret</Link> </li>
-
-        {
-            user? <>
-                    <span>{user?.displayName}</span>
+        <>
+            <li> <Link to='/'>Home</Link> </li>
+            <li> <Link to='/menu'>Our Menu</Link> </li>
+            <li> <Link to='/order/Salad'>Order Now</Link> </li>
+            <li> <Link to='/secret'>Secret</Link> </li>
+            <li>
+                <Link to="/">
+                    <button className="btn gap-2">
+                        <FaShoppingCart></FaShoppingCart>
+                        <div className="badge badge-secondary">+0</div>
+                    </button>
+                </Link>
+            </li>
+            {
+                user ? <>
                     <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-            </> : <>
+                </> : <>
                     <li> <Link to='/login'>Log In</Link> </li>
-            </>
-        }
-    </>
+                </>
+            }
+        </>
     return (
         <>
             <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl text-white bg-black">
